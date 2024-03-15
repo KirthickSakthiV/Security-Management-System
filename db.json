@@ -1,6 +1,12 @@
 {
   "users": [
     {
+      "id": "c892",
+      "username": "mk",
+      "email": "mk@gm.com",
+      "password": "mk"
+    },
+    {
       "username": "Admin",
       "email": "mk@gm.com",
       "password": "1234",
