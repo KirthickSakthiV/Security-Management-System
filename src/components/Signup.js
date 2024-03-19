@@ -5,7 +5,8 @@ export const Signup = () => {
     const[username,setUsername]=useState('')
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
-    const handlesignup=()=>{
+    const handlesignup=(e)=>{
+        e.preventDefault()
         axios.post('http://localhost:3001/users',
         {"username":username,"email":email,"password":password})
         .then(res=>console.log(res))
@@ -15,7 +16,7 @@ export const Signup = () => {
   return (
     <div>
         <h1 style={{ textAlign: 'center', textDecoration: 'underline dotted' }}>Signup page</h1>
-        <form onSubmit={handlesignup}>
+        <form onSubmit={(e)=>handlesignup(e)}>
             <label>Username:</label>
             <input type='text' value={username} onChange={(e)=>{
                 setUsername(e.target.value)}}/><br></br><br></br>

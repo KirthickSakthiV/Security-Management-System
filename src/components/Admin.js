@@ -43,7 +43,8 @@ export const Admin = () => {
         SetImg1(datas.image)
 
     }
-    let handleupdate = () =>{
+    let handleupdate = (e) =>{
+        e.preventDefault()
         axios.put(`http://localhost:3001/Students/${id1}`,{
             "id":id1,
             "name":name1,
@@ -108,7 +109,7 @@ export const Admin = () => {
             <input type="number" value={age1} onChange={(e)=>setAge1(e.target.value)}/><br></br>
             <label>Product Image</label>
             <input type="number" value={img1} onChange={(e)=>SetImg1(e.target.value)}/><br></br>
-            <button type='submit' onClick={handleupdate}>submit</button>
+            <button type='submit' onClick={e=>handleupdate(e)}>submit</button>
         </form >
         </div>}    
     </div>
